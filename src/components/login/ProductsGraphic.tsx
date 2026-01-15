@@ -28,11 +28,11 @@ const ProductsGraphic = ({ isActive }: ProductsGraphicProps) => {
 
     // --- STEP 1: DART STRIKE ANIMATION (Pins) ---
     tl.from(".pin-icon", {
-      scale: 4,          // Start huge 
-      opacity: 0,        // Start invisible
-      duration: 0.8,     // Very fast strike
-      stagger: 0.3,      // One after another
-      ease: "power4.in", // Hard impact ease
+      scale: 4,        
+      opacity: 0,       
+      duration: 0.8,     
+      stagger: 0.3,      
+      ease: "power4.in", 
     });
 
     // --- STEP 2: PRODUCT POP (Content Groups) ---

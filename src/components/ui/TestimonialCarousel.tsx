@@ -100,7 +100,7 @@ const TestimonialCarousel = () => {
 
     return () => initialDelay.kill();
 
-  }, { scope: containerRef }); // Scope ensures we only select classes inside this component
+  }, { scope: containerRef });
 
   return (
     <div ref={containerRef} className="mt-5 xl:mt-6 2xl:mt-8 flex w-full max-w-97 items-center justify-center gap-6">

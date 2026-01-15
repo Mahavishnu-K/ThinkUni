@@ -12,7 +12,7 @@ const ToggleSwitch = ({ checked, onChange, id }: ToggleSwitchProps) => {
       <input
         type="checkbox"
         id={id}
-        className="peer sr-only" // Hide the default checkbox
+        className="peer sr-only" 
         checked={checked}
         onChange={(e) => onChange?.(e.target.checked)}
       />

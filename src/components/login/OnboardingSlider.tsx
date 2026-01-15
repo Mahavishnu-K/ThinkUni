@@ -33,16 +33,13 @@ const OnboardingSlider = () => {
     dependencies: [activeIndex]
   });
 
-  // --- PROGRESS BAR ANIMATION (GPU OPTIMIZED) ---
   useEffect(() => {
     if (progressTimeline.current) {
       progressTimeline.current.kill();
     }
 
-    // 1. Reset ALL bars using scaleX
     progressRefs.current.forEach((progress) => {
       if (progress) {
-        // Set scaleX to 0 to hide them. 
         // transformOrigin: "left" ensures it grows from left to right.
         gsap.set(progress, { scaleX: 0, transformOrigin: "left" });
       }
@@ -161,10 +158,6 @@ const OnboardingSlider = () => {
               `}
               aria-label={`Go to slide ${index + 1}`}
             >
-              {/* 
-                 CHANGE: We give this width="100%" initially.
-                 GSAP will control visibility using scaleX(0) -> scaleX(1).
-              */}
               <div
                 ref={(el) => {
                   progressRefs.current[index] = el;

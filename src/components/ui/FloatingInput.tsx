@@ -19,12 +19,7 @@ const FloatingInput = ({ id, label, type = "text", value, onChange }: FloatingIn
 
   return (
     <div className="relative w-full">
-      {/* 
-        1. THE INPUT 
-        - 'peer': Allows the label to react to this input's state.
-        - 'placeholder-transparent': Hides the native placeholder so our custom label shows instead.
-        - 'placeholder=" "': Required for the :placeholder-shown pseudo-class to work.
-      */}
+     
       <input
         type={inputType}
         id={id}
@@ -39,11 +34,7 @@ const FloatingInput = ({ id, label, type = "text", value, onChange }: FloatingIn
         placeholder=" " 
       />
 
-      {/* 
-        2. THE FLOATING LABEL 
-        - Default state (Floating): Sits on top border, small text, orange color (if focused).
-        - Peer-Placeholder-Shown (Idle): Sits in center, normal text, gray color.
-      */}
+      
       <label
         htmlFor={id}
         className="
@@ -65,10 +56,7 @@ const FloatingInput = ({ id, label, type = "text", value, onChange }: FloatingIn
         {label}
       </label>
 
-      {/* 
-        3. PASSWORD TOGGLE (Optional)
-        - Only renders if the original type was 'password'
-      */}
+     
       {type === "password" && (
         <button
           type="button"

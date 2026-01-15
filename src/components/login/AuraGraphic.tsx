@@ -132,13 +132,11 @@ const AuraGraphic = () => {
       {icons.map((icon, index) => (
         <div
           key={index}
-          // Dynamic class: Adds 'float-x' or 'float-y' based on config
           className={`absolute z-20 object-contain will-change-transform ${icon.axis === 'x' ? 'float-x' : 'float-y'} ${icon.className}`}
         >
           <Image
             src={icon.src}
             alt={icon.alt}
-            // Using your exact styling
             className="rounded-full backdrop-blur-[2px] shadow-[inset_1px_1px_0px_0px_rgba(255,255,255,0.6),inset_4px_4px_6px_6px_rgba(255,255,255,0)]"
           />
         </div>
