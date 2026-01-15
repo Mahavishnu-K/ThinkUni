@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  /* This updates the Tailwind utility 'font-sans' */
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;        /* 14-inch laptops */
+  --breakpoint-laptop: 1366px;    /* 15.6-inch common */
+  --breakpoint-laptop-lg: 1440px;
+  --breakpoint-2xl: 1536px;
+}
+
+/* ✅ FIX: Explicitly force body to use the font variable */
+body {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+:root {
+  --background: #ffffff;
+}

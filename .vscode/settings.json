@@ -1,0 +1,24 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  
+  // NEXT.JS SPECIFIC: Clean up the App Router file mess
+  // The App Router creates many files (page, layout, loading, error) in one folder.
+  // This collapses them visually.
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "page.tsx": "layout.tsx, loading.tsx, error.tsx, not-found.tsx, template.tsx, route.ts, page.module.css",
+    "global.css": "tailwind.config.ts, postcss.config.js, next.config.mjs"
+  },
+  "tailwindCSS.experimental.configFile": "client/tailwind.config.ts",
+  "eslint.workingDirectories": [ "./client" ]
+}
