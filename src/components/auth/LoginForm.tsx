@@ -16,6 +16,10 @@ interface LoginFormProps {
 
 const LoginForm = ({ onRegisterClick }: LoginFormProps) => {
   const [rememberMe, setRememberMe] = useState(false);
+  const [formData, setFormData] = useState({
+    email: "",
+    password: ""
+  });
 
   return (
     <div className="flex h-full w-full flex-col items-center justify-center bg-white p-8 md:p-17">
@@ -40,12 +44,16 @@ const LoginForm = ({ onRegisterClick }: LoginFormProps) => {
             id="login-email" 
             label="Email id" 
             type="email" 
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           />
 
           <FloatingInput 
             id="login-password" 
             label="Password" 
             type="password" 
+            value={formData.password}
+            onChange={(e) => setFormData({ ...formData, password: e.target.value })} 
           />
 
           <div className="flex items-center justify-between">

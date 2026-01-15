@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 import logo from "@/assets/logo.png"; 
 import FloatingInput from "@/components/ui/FloatingInput";
@@ -12,6 +13,13 @@ interface SignupFormProps {
 }
 
 const SignupForm = ({ onLoginClick }: SignupFormProps) => {
+  const [formData, setFormData] = useState({
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: ""
+  });
+
   return (
     <div className="flex h-full w-full flex-col items-center justify-center bg-white p-8 md:p-16">
       <div className="w-full max-w-105">
@@ -41,15 +49,15 @@ const SignupForm = ({ onLoginClick }: SignupFormProps) => {
         <form className="space-y-4">
           <div className="flex gap-4">
             <div className="w-1/2">
-              <FloatingInput id="signup-first" label="First Name" />
+              <FloatingInput id="signup-first" label="First Name" value={formData.firstName} onChange={(e) => setFormData({ ...formData, firstName: e.target.value })} />
             </div>
             <div className="w-1/2">
-              <FloatingInput id="signup-last" label="Last Name" />
+              <FloatingInput id="signup-last" label="Last Name" value={formData.lastName} onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}  />
             </div>
           </div>
 
-          <FloatingInput id="signup-email" label="Email id" type="email" />
-          <FloatingInput id="signup-password" label="Password" type="password" />
+          <FloatingInput id="signup-email" label="Email id" type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
+          <FloatingInput id="signup-password" label="Password" type="password" value={formData.password} onChange={(e) => setFormData({ ...formData, password: e.target.value })} />
 
           <div className="flex items-center justify-between pt-1">
             <label className="flex items-center gap-2 text-[16px] text-[#222222] cursor-pointer select-none">
